@@ -37,13 +37,13 @@ public class Model {
 		List<Adiacenza> adiacenza = this.dao.getAdiacenza(categoria,mese);
 		
 		for(Adiacenza a : adiacenza) {
-			if(!this.grafo.containsVertex(a.getV1())) {
+			if(!this.grafo.containsVertex(a.getV1())) 
 				this.grafo.addVertex(a.getV1());
-			}else if (!this.grafo.containsVertex(a.getV2())) {
+			 if (!this.grafo.containsVertex(a.getV2())) 
 				this.grafo.addVertex(a.getV2());
-			}else if(this.grafo.getEdge(a.getV1(), a.getV2()) == null) {
+			if(this.grafo.getEdge(a.getV1(), a.getV2()) == null) 
 				Graphs.addEdgeWithVertices(this.grafo, a.getV1(), a.getV2(), a.getPeso());
-			}
+			
 			
 		}
 		
